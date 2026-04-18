@@ -1,7 +1,8 @@
 # Freelancing Opportunities Report
-**Generated:** 2026-04-18 17:00 UTC  
+**Generated:** 2026-04-18 17:00 UTC (refreshed 17:45 UTC)  
 **Target profile:** Chinese developer, AI/automation specialist, Python + TypeScript + Claude Code  
-**Focus:** Quick wins $50–$500, start immediately
+**Focus:** Quick wins $50–$500, start immediately  
+**Sources:** Upwork, Fiverr, GitHub Trending, Product Hunt (live research)
 
 ---
 
@@ -191,6 +192,63 @@
 - **Upwork bid rates:** $40–$75/hr typical for Claude/AI specialists. Fixed-price projects from $100 to $1,200+.
 - **TypeScript is #1 on GitHub for AI:** Aligns perfectly with target developer's TypeScript skills.
 - **n8n + Claude combo** is appearing in multiple job posts — this specific pairing is in demand.
+
+---
+
+## ADDITIONAL OPPORTUNITIES (Refreshed Scan 17:45 UTC)
+
+### 23. AI Automation Developer — Claude API / Make.com (Upwork)
+- **Platform:** Upwork
+- **Estimated Pay:** $200–$600 fixed
+- **Skills Needed:** Claude API, Make.com, webhook automation, business process mapping
+- **Assessment:** Volume play — bid $200–$300, deliver in 3 days, collect review fast
+
+### 24. n8n Native AI Node Development (GitHub → Fiverr/Gumroad)
+- **Platform:** GitHub → sell via Fiverr or Gumroad
+- **Estimated Pay:** $50–$200 per template sold; $100–$300 per custom build
+- **Skills Needed:** TypeScript/Node.js, n8n plugin API, Claude API
+- **Assessment:** Claude-specific n8n nodes are underrepresented — first-seller advantage on the n8n marketplace
+
+### 25. VoltAgent/awesome-agent-skills → Claude Code Consulting
+- **Platform:** GitHub → Upwork / Direct
+- **Estimated Pay:** $100–$400 per custom skill package
+- **Skills Needed:** Claude Code, TypeScript, agent skill design
+- **Assessment:** Contribute to this repo to build credibility, then offer paid custom skill builds — direct Claude Code monetization
+
+### 26. GraphRAG "Ask Your Docs" Chatbot
+- **Platform:** Fiverr / Upwork
+- **Estimated Pay:** $200–$500 per project
+- **Skills Needed:** Python, GraphRAG/LlamaIndex, vector DBs (Pinecone/Qdrant), Claude API
+- **Assessment:** Graphify (10,572+ GitHub stars) proves demand; package as "upload your docs → chatbot" service for SMBs
+
+---
+
+## CONSOLIDATED QUICK WIN PRIORITY STACK
+
+| Priority | Opportunity | Platform | Est. Earnings | Start Time |
+|----------|-------------|----------|---------------|------------|
+| 1 | MCP Server Setup (Python dev job) | Upwork | $150–$400 | Apply today |
+| 2 | Claude MCP + Clio/Legal API Integration | Upwork | $300–$600 | Apply today |
+| 3 | n8n + Claude agentic workflow gig | Fiverr | $100–$300 | List in 1 day |
+| 4 | AI Chatbot with CRM integration | Fiverr | $150–$800 | List in 1 day |
+| 5 | Claude API / Make.com Workflows | Upwork | $200–$600 | Apply today |
+| 6 | Python + Claude API BI Automation | Upwork | $1,200 | Apply today |
+| 7 | GraphRAG "ask your docs" chatbot | Fiverr/Upwork | $200–$500 | List in 2 days |
+| 8 | n8n Claude node template | Gumroad | $50–$200/sale | Build in 1 day |
+| 9 | Google ADK multi-agent consulting | Upwork | $300–$900 | List in 3 days |
+| 10 | MCP server for Notion/Linear/Jira | Fiverr | $100–$400 | List in 2 days |
+
+---
+
+## KEY MARKET SIGNALS (April 2026)
+
+- **MCP hit 97M monthly SDK downloads** — almost no freelancers specialize in it yet, massive first-mover advantage
+- **AI freelance demand up 109% YoY** (Upwork, Feb 2026) — rising tide, even mid-quality proposals convert
+- **Claude API specifically called out** in multiple Upwork job titles — not just "any LLM", your differentiation
+- **TypeScript is #1 GitHub language for AI** — 66% surge, aligns directly with target stack
+- **1,939 open chatbot dev jobs on Upwork** — enormous pool to fish from at any given time
+- **Fiverr AI automation gigs:** $100–$800/project; add $100/mo maintenance = passive income
+- **Chinese developer dual-market angle:** Domestic CN market (Taobao/Xianyu) is untapped for Claude Code gigs
 
 ---
 
