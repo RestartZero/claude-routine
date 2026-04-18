@@ -1,246 +1,267 @@
-# Product Ideas for Solo Developer — 2026-04-18 18:00
+# Product Ideas Report — 2026-04-18 18:00
 
-> Researched from: trending micro-SaaS/AI tool reports, Product Hunt April 2026 launches, Indie Hackers revenue stories, Xiaohongshu/Zhihu Chinese market demand, MCP ecosystem data.
-
----
-
-## Priority Tier 1: Build in 1 Day, Revenue Within a Week
+> Solo developer stack: Python, TypeScript, Claude API, MCP servers, AI automation.
+> Focus: ship in 1-3 days, revenue immediately.
 
 ---
 
-### 1. XhsPostGenius (小红书爆款助手)
+## Research Summary
 
-**What it does:** Generates Xiaohongshu posts (title, body, hashtags, cover text) optimized for algorithm virality using Claude API, based on product info or keyword input.
+**Sources synthesized:**
+- Micro-SaaS trends: NxCode, CalmOps, EgoistAI case studies
+- Chrome extension revenue data: ExtensionPay, ChromeGoldmine, Indie Hackers
+- Chinese market: Xiaohongshu (16.15M AI posts, more than makeup!), GitHub projects for XHS automation
+- MCP monetization: DEV Community (21st.dev hit $10K MRR in 6 weeks), MCPize marketplace (85% rev share)
+- Product Hunt 2026: video AI, contextual writing extensions, browser automation, AI chat export utilities
+
+**Key signals:**
+- MCP ecosystem at 8M downloads, 85% MoM growth — highly monetizable right now
+- Xiaohongshu is China's #1 AI discussion hub; demand for content automation tools is massive
+- Easy Folders (AI chat organizer Chrome ext): $3,700/month by one developer
+- AEO (Answer Engine Optimization) is a brand-new market — almost zero competitors
+- Usage-based credits model outperforming flat subscriptions for AI extensions
+
+---
+
+## Top 10 Product Ideas
+
+---
+
+### 1. AEO Scout — Answer Engine Optimization Analyzer
+
+**What it does:** Analyzes your blog/landing page and rewrites it so AI search engines (Perplexity, ChatGPT, Claude) cite it as a top answer.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Chinese |
-| Dev time | 8–12 hours |
-| Monetization | Freemium (5 free posts/day → ¥39/month unlimited) |
-| Selling platform | 微信小程序 + 闲鱼 (lifetime deal) |
-| Competition | Medium |
-| Revenue potential | $800–2,500/month |
+|---|---|
+| **Target market** | Global |
+| **Dev time** | 20–28 hours |
+| **Monetization** | Subscription — $29/month (5 analyses), $79/month unlimited |
+| **Selling platform** | Paddle |
+| **Competition** | Low — barely any tools exist for AEO specifically |
+| **Revenue potential** | $2,000–$8,000/month |
 
-**Why now:** WeChat launched a 2026 AI Mini Program Growth Plan with 100M free Hunyuan tokens + free cloud dev for 6 months. Xiaohongshu has become "a second Baidu" — creators need tools to keep up. Examples show people earning ¥400k from a single viral note. The content demand is massive and under-tooled.
+**Why now:** HubSpot just launched an AEO Grader (basic). Google SGE + ChatGPT search are killing traditional SEO. Every content marketer will need this within 12 months. Claude's extended context window is perfect for analyzing full pages.
 
-**Quick stack:** Python FastAPI backend + WeChat Mini Program frontend. Claude API for generation, prompt engineered for XHS format.
+**Build approach:** Python FastAPI backend + Claude claude-sonnet-4-6, Next.js frontend, Paddle for payments. Day 1: scraper + Claude prompt. Day 2: UI + Paddle. Day 3: launch on Product Hunt.
 
 ---
 
-### 2. ColdDM.ai
+### 2. XHS Genius — Xiaohongshu AI Content Generator (Chrome Extension)
 
-**What it does:** Paste a target's LinkedIn URL or company website → Claude generates a hyper-personalized cold outreach message (email, LinkedIn DM, or Twitter DM).
+**What it does:** Chrome extension that generates Xiaohongshu (小红书) post titles, body copy, hashtags, and image prompt suggestions from a single topic keyword, using Claude.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 10–14 hours |
-| Monetization | Subscription $29/month (50 DMs) or $9/month (10 DMs) |
-| Selling platform | Paddle / Stripe |
-| Competition | Medium |
-| Revenue potential | $2,000–6,000/month |
+|---|---|
+| **Target market** | Chinese (primary), Global brands entering China |
+| **Dev time** | 16–24 hours |
+| **Monetization** | Freemium — 10 free/month, then ¥29/month or ¥199/year |
+| **Selling platform** | 闲鱼 (Xianyu), WeChat Pay link, Payhip for global |
+| **Competition** | Low-Medium — existing tools are clunky GitHub projects, not polished products |
+| **Revenue potential** | $500–$3,000/month |
 
-**Why now:** B2B founders, freelancers, and sales reps are willing to pay immediately because every DM that converts is worth $100s. AI-generated copy that sounds personal is a clear 10× value prop over templates. Direct channel to Reddit communities (r/sales, r/freelance) for distribution.
+**Why now:** 16.15M posts tagged "AI" on Xiaohongshu — surpassing makeup content. Chinese creators are actively looking for tools. Most existing solutions (xiaohongshu-mcp, xhs-ai-tool) are developer-only, not user-friendly.
 
-**Quick stack:** TypeScript + Next.js. Scrape LinkedIn/site with Firecrawl or Jina Reader, pipe to Claude for personalized DM generation.
+**Build approach:** TypeScript Chrome extension, Claude API with Chinese-tuned system prompt, Plasmo framework for fast extension dev. Sell via QR code + 闲鱼 listing.
 
 ---
 
-### 3. DigestMail (AI Email Newsletter Summarizer)
+### 3. XHS MCP Server (Monetized)
 
-**What it does:** Chrome extension that summarizes email newsletters and digest threads into 3-bullet TLDRs, with a weekly digest view across all subscriptions.
+**What it does:** A paid MCP server that lets Claude/Cursor/any MCP client search Xiaohongshu trends, analyze competitor posts, and draft content — fully automated.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 8–12 hours |
-| Monetization | $7/month subscription or $29 lifetime |
-| Selling platform | Paddle / ExtensionPay |
-| Competition | Low |
-| Revenue potential | $1,000–3,500/month |
+|---|---|
+| **Target market** | Both (Chinese developers + global brands targeting China) |
+| **Dev time** | 20–30 hours |
+| **Monetization** | Per-call via MCPize marketplace ($0.02/call) + $9/month flat tier |
+| **Selling platform** | MCPize (85% rev share), npm, GitHub Sponsors |
+| **Competition** | Low — open-source alternatives exist but none are monetized/maintained |
+| **Revenue potential** | $500–$4,000/month |
 
-**Why now:** Chrome extension AI tools with lifetime deals sell well ($3,500 in 2 months documented on Indie Hackers). Email overload is a universal pain. No dominant player for newsletter summarization specifically — most tools do general email.
+**Why now:** MCP protocol hit 8M downloads with 85% MoM growth. 21st.dev made $10K MRR in 6 weeks from an MCP-based tool. The xiaohongshu-mcp GitHub project exists but is free and unmaintained — gap to fill with a polished paid version.
 
-**Quick stack:** Chrome extension (TypeScript) + Gmail API + Claude API. Manifest V3.
-
----
-
-## Priority Tier 2: Build in 2–3 Days, Strong Revenue Ceiling
+**Build approach:** Python MCP server with Playwright for XHS scraping (no official API), deploy to MCPize, list on smithery.ai and glama.ai directories.
 
 ---
 
-### 4. ContractLens
+### 4. SnapToCode — Screenshot → React Code (Chrome Extension)
 
-**What it does:** Freelancers paste a contract or upload a PDF → Claude highlights risky clauses (IP assignment, non-compete, payment terms) and suggests safer rewrites in plain English.
+**What it does:** Screenshot any UI element on any webpage → Claude converts it to clean React/Tailwind/HTML code in one click.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 16–20 hours |
-| Monetization | $12/month or $49 lifetime one-time |
-| Selling platform | Paddle / Gumroad |
-| Competition | Low–Medium |
-| Revenue potential | $2,000–5,500/month |
+|---|---|
+| **Target market** | Global (developers, no-code builders) |
+| **Dev time** | 16–24 hours |
+| **Monetization** | Credits — 10 free, $9.99/month for 200 conversions |
+| **Selling platform** | Paddle, Chrome Web Store |
+| **Competition** | Medium — v0.dev exists but as a website, not browser-native |
+| **Revenue potential** | $1,000–$6,000/month |
 
-**Why now:** Gerri (AI contract redliner) launched on Product Hunt April 2026 targeting enterprises — freelancer segment is underserved and more price-sensitive. 41.8M solopreneurs in the US alone sign contracts regularly. High pain, low current solution quality.
+**Why now:** Developers constantly copy UI elements from competitor sites. There's no native browser extension that does screenshot → code. Claude's vision API makes this straightforward. Product Hunt Chrome extension category is actively rewarding tools like this.
 
-**Quick stack:** Next.js + PDF parsing (pdf-parse) + Claude API with extended thinking for legal reasoning. No auth needed for MVP — paste-and-go.
+**Build approach:** TypeScript Chrome extension using chrome.tabs.captureVisibleTab API + Claude claude-sonnet-4-6 vision, Plasmo framework, sidebar panel UI.
 
 ---
 
-### 5. ScaffoldAI (项目脚手架生成器)
+### 5. RivalWatch — AI Competitor Monitor
 
-**What it does:** Developer describes their project in natural language → Claude generates complete project scaffold: folder structure, API interface definitions, DB schema, boilerplate code, and README.
+**What it does:** Enter up to 10 competitor URLs; receive a daily AI-written briefing (via email/Slack) on changes to their pricing, features, copy, and blog posts.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Both (Chinese + Global) |
-| Dev time | 14–20 hours |
-| Monetization | $9/month or ¥49/month |
-| Selling platform | Paddle (global) + 闲鱼/小程序 (China) |
-| Competition | Low |
-| Revenue potential | $1,500–4,000/month |
+|---|---|
+| **Target market** | Global (SaaS founders, product managers, marketers) |
+| **Dev time** | 24–36 hours |
+| **Monetization** | Subscription — $29/month (5 competitors), $79/month (20 competitors) |
+| **Selling platform** | Paddle |
+| **Competition** | Medium — tools like Kompyte exist but are enterprise-priced ($500+/month) |
+| **Revenue potential** | $2,000–$10,000/month |
 
-**Why now:** Zhihu research shows the #1 developer pain point is project initialization (confirming requirements, designing schemas, writing boilerplate) — not the actual coding. Claude Code and Cursor solve writing code but not the "blank page" architecture phase. This is an unoccupied wedge.
+**Why now:** Every SaaS founder obsessively checks competitor sites manually. An affordable automated version is a clear pain point. Claude is ideal for synthesizing diffs into readable intelligence reports.
 
-**Quick stack:** Python FastAPI + Claude API with multi-step prompts. Web UI in Next.js. Export as zip.
+**Build approach:** Python (Playwright scraper + diff engine) + Claude for summarization, cron job for daily checks, Resend for email delivery, simple Next.js dashboard.
 
 ---
 
-### 6. CompetitorLens (Chrome Extension)
+### 6. FirstLine AI — LinkedIn Cold Outreach Personalizer (Chrome Extension)
 
-**What it does:** Visit any competitor's website → click extension → get Claude-powered breakdown of their positioning, pricing strategy, weakness gaps, and suggested counter-moves.
+**What it does:** Hover over any LinkedIn profile → Claude generates a hyper-personalized opening line for a cold email or DM, pulling from their bio, posts, and activity.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 12–18 hours |
-| Monetization | $15/month subscription |
-| Selling platform | Paddle |
-| Competition | Medium |
-| Revenue potential | $2,500–7,000/month |
+|---|---|
+| **Target market** | Global (salespeople, recruiters, founders) |
+| **Dev time** | 16–20 hours |
+| **Monetization** | Credits — 20 free, $19/month for 500 lines |
+| **Selling platform** | Paddle, Chrome Web Store |
+| **Competition** | Medium — Lavender, Crystal exist but cost $50–$150/month; this undercuts them |
+| **Revenue potential** | $1,000–$5,000/month |
 
-**Why now:** Competitive intelligence SaaS (Crayon, Klue) charges $1,500+/month targeting enterprises. The SMB/solo founder market has no affordable option. Claude's analysis capability makes this genuinely useful, not just scraping.
+**Why now:** Cold outreach personalization is a top sales pain point. LinkedIn's own AI features are locked behind Sales Navigator ($99/month). A $19/month tool is a no-brainer for anyone doing outreach.
 
-**Quick stack:** Chrome extension (TypeScript) that scrapes current page DOM + Jina Reader for full content → Claude API for analysis → structured output rendered in sidebar.
+**Build approach:** TypeScript Chrome extension with content script to extract profile data, Claude API call, floating tooltip UI. 16-hour build realistic.
 
 ---
 
-### 7. MeetingMemo MCP Server
+### 7. VaultAI — AI Chat History Organizer (Chrome Extension)
 
-**What it does:** MCP server that connects to calendar (Google Calendar/Outlook) + meeting transcripts (Fireflies/Otter webhooks) → Claude automatically generates follow-up emails, action items, and CRM notes after each meeting.
+**What it does:** Adds folders, tags, search, and AI-generated titles to ChatGPT and Claude conversation history — making thousands of past chats actually findable.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 18–24 hours |
-| Monetization | $19/month (SaaS wrapper around MCP) |
-| Selling platform | Paddle / Stripe |
-| Competition | Medium |
-| Revenue potential | $3,000–8,000/month |
+|---|---|
+| **Target market** | Global |
+| **Dev time** | 20–28 hours |
+| **Monetization** | Freemium — free for basic folders, $4.99/month for AI tagging + search |
+| **Selling platform** | Paddle, Chrome Web Store |
+| **Competition** | Medium — Easy Folders makes $3,700/month proving this market; opportunity to compete with better AI features |
+| **Revenue potential** | $1,500–$5,000/month |
 
-**Why now:** AI meeting assistant market projected to hit $7.33B by 2035. Granola ($20M Series A) proves there's revenue, but their product is complex. An MCP-first approach targets Claude Code/Cursor power users who want this baked into their workflow. The Anthropic SDK hit 97M monthly downloads — huge distribution for MCP products.
+**Why now:** Easy Folders ($3,700/month) proved the market. ChatGPT's native organization is still poor. Adding Claude-powered auto-categorization is a meaningful differentiator.
 
-**Quick stack:** TypeScript MCP server + Google Calendar API + Fireflies webhook. Published to MCP Market + Anthropic directory.
+**Build approach:** TypeScript Chrome extension, MutationObserver to hook into ChatGPT/Claude DOM, IndexedDB for local storage, Claude claude-haiku-4-5 for cheap fast auto-tagging.
 
 ---
 
-### 8. WeChatAI客服 (WeChat AI Customer Service Mini Program)
+### 8. BilingualBlast — Chinese ↔ English Content Repurposer
 
-**What it does:** WeChat Mini Program that gives Chinese SMBs a plug-and-play AI customer service agent trained on their product FAQs — handles common inquiries via WeChat messages automatically.
+**What it does:** Paste any blog post, video transcript, or social post → get 5 ready-to-publish formats in both Chinese and English (Twitter thread, LinkedIn post, WeChat article, Xiaohongshu note, newsletter).
 
 | Field | Detail |
-|-------|--------|
-| Target market | Chinese |
-| Dev time | 20–30 hours |
-| Monetization | ¥199–499/month subscription |
-| Selling platform | 微信小程序 in-app purchase |
-| Competition | Medium |
-| Revenue potential | $1,500–5,000/month |
+|---|---|
+| **Target market** | Both (Chinese creators going global, global creators entering China) |
+| **Dev time** | 16–24 hours |
+| **Monetization** | Credits — $19/month (50 repurposes), $49/month (unlimited) |
+| **Selling platform** | Paddle (global), 闲鱼 + 微信支付 (China) |
+| **Competition** | Low — content repurposers exist but none focus on bilingual Chinese/English |
+| **Revenue potential** | $800–$4,000/month |
 
-**Why now:** WeChat's 2026 AI Mini Program Growth Plan offers free cloud compute, 100M tokens, and full virtual payment support. Klariqo AI (voice agents for SMBs) launched on Product Hunt April 2026 shows global demand. Chinese SMBs are 2 years behind Western market on AI adoption — first-mover advantage.
+**Why now:** The TikTok ban drove massive US→Xiaohongshu migration ("TikTok refugees"), creating a new market of creators who need bilingual content. Claude's Chinese language quality is excellent.
 
-**Quick stack:** WeChat Mini Program (TypeScript) + Tencent Cloud + Claude API (or DeepSeek for China compliance). RAG with business FAQ docs.
-
----
-
-## Priority Tier 3: Higher Complexity, High Revenue Ceiling
+**Build approach:** Python FastAPI + Claude claude-sonnet-4-6, simple Next.js frontend, Paddle checkout. Extremely straightforward — 2 days max.
 
 ---
 
-### 9. CodeGuardAI
+### 9. 商务信函AI — Chinese B2B Email Writer (WeChat Mini Program)
 
-**What it does:** Security scanner that reviews Claude/Copilot-generated code for OWASP Top 10 vulnerabilities before it hits production, with one-click fix suggestions.
+**What it does:** WeChat Mini Program that writes professional Chinese business emails for 20+ common scenarios (cold outreach, proposal follow-up, meeting request, contract negotiation) with industry-specific templates.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 24–36 hours |
-| Monetization | Freemium → $15/month pro (100 scans/month) |
-| Selling platform | Paddle |
-| Competition | Medium |
-| Revenue potential | $3,000–9,000/month |
+|---|---|
+| **Target market** | Chinese |
+| **Dev time** | 24–36 hours |
+| **Monetization** | 小程序内购 — ¥9.9 for 30 emails, ¥39/month unlimited |
+| **Selling platform** | 微信小程序 (WeChat Mini Program), 闲鱼 |
+| **Competition** | Low — general AI tools exist but no dedicated B2B Chinese email writer |
+| **Revenue potential** | ¥3,000–¥15,000/month (~$400–$2,100) |
 
-**Why now:** AI-generated code has 2.74× more vulnerabilities than human-written code (per 2026 security research). 88% of orgs use AI coding tools but only 16% have scaled safely. Security is the #1 concern for 51% of tech leaders. This is a provable, quantified problem with a clear buyer (devs who ship AI-generated code daily).
+**Why now:** Chinese B2B professionals are highly underserved by current AI tools (most optimized for English). Doubao and DeepSeek are the dominant tools, but neither has a specialized business email mode.
 
-**Quick stack:** Python CLI + VS Code extension + Claude API. Run static analysis (semgrep) first, then pipe findings to Claude for contextual fix suggestions.
+**Build approach:** WeChat Mini Program (TypeScript), Claude API with Chinese-optimized prompts, WeChat Pay integration. Can be done without an app store review process.
 
 ---
 
-### 10. IndustryEmailAI
+### 10. MCPHub Analyzer — MCP Server Directory + Quality Ranker
 
-**What it does:** Vertical-specific AI email writer — pick your industry (real estate, legal, medical, SaaS), describe the situation → Claude generates a professional email following industry norms and compliance language.
+**What it does:** A web tool that discovers, tests, and ranks all public MCP servers by reliability, latency, and feature completeness — the "npm quality score" for MCP servers.
 
 | Field | Detail |
-|-------|--------|
-| Target market | Global |
-| Dev time | 20–28 hours |
-| Monetization | $19/month per industry vertical |
-| Selling platform | Paddle |
-| Competition | Low |
-| Revenue potential | $3,000–10,000/month |
+|---|---|
+| **Target market** | Global (AI developers, Claude Code users) |
+| **Dev time** | 28–40 hours |
+| **Monetization** | Freemium — free basic listing, $19/month for private server monitoring + alerts |
+| **Selling platform** | Paddle |
+| **Competition** | Low — smithery.ai and glama.ai list servers but don't test/rank them |
+| **Revenue potential** | $500–$3,000/month |
 
-**Why now:** Generic AI email writers are commoditized (ChatGPT, Jasper). Vertical specificity (HIPAA-aware medical emails, RESPA-compliant real estate emails) is a genuine moat that general tools can't easily replicate. B2B professionals pay $20–100/month without hesitation for tools that save legal exposure.
+**Why now:** With 500+ MCP servers published and the ecosystem exploding (85% MoM growth), developers have no way to know which servers are reliable. This also becomes a lead-gen tool — anyone checking MCP quality is a potential customer for your own MCP servers (#3 above).
 
-**Quick stack:** Next.js + Claude API with industry-specific system prompts + fine-tuned few-shot examples per vertical. Launch with 2–3 verticals.
-
----
-
-## Bonus: Fast-Flip Ideas (Build & Sell as Product/Template)
-
-| Idea | What | Dev Time | Sell For |
-|------|------|----------|---------|
-| XHS Automation Script | Batch-generate 50 XHS posts from product catalog | 4 hours | ¥299 on 闲鱼 one-time |
-| Claude MCP Starter Kit | Boilerplate MCP server with auth, billing, rate-limiting | 6 hours | $49 on Gumroad |
-| AI LinkedIn Profile Optimizer | Paste profile → Claude rewrites for ATS + recruiter appeal | 6 hours | $19 one-time on Gumroad |
+**Build approach:** Python (MCP client to auto-test servers) + Claude for feature description analysis, Next.js frontend with rankings, Vercel deploy.
 
 ---
 
-## Market Intelligence Summary
+## Priority Matrix
 
-| Signal | Implication |
-|--------|------------|
-| WeChat 2026 AI Mini Program Plan (100M free tokens) | Lowest-cost Chinese market entry ever |
-| MCP SDK: 97M monthly downloads | MCP-native products get free distribution |
-| AI code has 2.74× more vulnerabilities | Security tools have urgent, provable demand |
-| Solo founders ship 5–10× faster with AI | Competition timeline is weeks, not months |
-| XHS creators earning ¥400k from viral posts | Chinese content tools have high willingness to pay |
-| Micro-SaaS avg MRR: $5K–$50K for solo founders | The model is validated — execution is the bottleneck |
-
----
-
-## Recommended 7-Day Launch Plan
-
-| Day | Action |
-|-----|--------|
-| Day 1 | Build **ColdDM.ai** MVP (10 hours). Post on r/freelance + r/sales. |
-| Day 2 | Add Paddle billing. Tweet build-in-public thread. |
-| Day 3 | Build **DigestMail** Chrome extension. Submit to Chrome Web Store. |
-| Day 4 | Launch **DigestMail** on ProductHunt. |
-| Day 5 | Start **XhsPostGenius** WeChat Mini Program. |
-| Day 6 | Submit XhsPostGenius to WeChat. List on 闲鱼 for lifetime deal. |
-| Day 7 | Evaluate which product got traction. Double down on winner. |
+| # | Idea | Dev Time | Revenue Potential | Competition | Build First? |
+|---|---|---|---|---|---|
+| 1 | AEO Scout | 24h | $$$$ | Low | ✅ YES |
+| 3 | XHS MCP Server | 25h | $$$ | Low | ✅ YES |
+| 2 | XHS Genius Chrome Ext | 20h | $$$ | Low-Med | ✅ YES |
+| 6 | FirstLine AI | 18h | $$$ | Medium | ✅ YES |
+| 4 | SnapToCode | 20h | $$$ | Medium | 🟡 Strong |
+| 8 | BilingualBlast | 20h | $$$ | Low | 🟡 Strong |
+| 5 | RivalWatch | 30h | $$$$ | Medium | 🟡 Consider |
+| 7 | VaultAI | 24h | $$$ | Medium | 🟡 Consider |
+| 9 | B2B Email Writer | 30h | $$ | Low | 🟠 China first |
+| 10 | MCPHub Analyzer | 35h | $$ | Low | 🟠 Longer term |
 
 ---
 
-*Sources: Indie Hackers revenue stories, Product Hunt April 2026 launches, Zhihu 2026 developer pain points, Xiaohongshu monetization trends, WeChat Open Platform AI Mini Program announcement, Anthropic SDK download stats, Deloitte 2026 Software Outlook.*
+## Recommended Build Order (Week 1–2)
+
+**Day 1–2:** XHS MCP Server — lowest competition, fastest to validate, MCPize handles payments.
+
+**Day 3–4:** AEO Scout — completely new market, $29-79/month pricing, no serious competitors.
+
+**Day 5–6:** XHS Genius Chrome Extension — taps Chinese demand proven by 16M XHS AI posts.
+
+**Day 7:** Launch all three on Product Hunt, Reddit (r/SideProject, r/ClaudeAI), 闲鱼.
+
+---
+
+## Sources
+
+- [50 Micro SaaS Ideas for 2026 — NxCode](https://www.nxcode.io/resources/news/micro-saas-ideas-2026)
+- [Micro-SaaS Built With AI: 6 Case Studies — EgoistAI](https://egoistai.com/articles/ai-saas-microstartup-case-studies/)
+- [Micro-SaaS Ideas 2026 — Calmops](https://calmops.com/indie-hackers/micro-saas-ideas-2026/)
+- [8 Chrome Extensions with Impressive Revenue — ExtensionPay](https://extensionpay.com/articles/browser-extensions-make-money)
+- [Chrome Extension Revenue Benchmarks 2026 — ChromeGoldmine](https://chromegoldmine.com/blog/chrome-extension-monetization/chrome-extension-revenue-benchmarks/)
+- [Chrome Goldmine — Indie Hackers](https://www.indiehackers.com/post/dfy-chrome-goldmine-find-build-your-next-100k-chrome-extension-all-research-done-R8uwBDeQ9mY1WLlH10Yq)
+- [How Xiaohongshu Becomes the Hub for AI Discussions in China — Recode China AI](https://recodechinaai.substack.com/p/how-xiaohongshu-becomes-the-hub-for)
+- [Xiaohongshu Marketing Guide 2026 — Digital Crew](https://www.digitalcrew.agency/xiaohongshu-marketing-the-complete-2026-guide-for-global-brands-entering-china/)
+- [xiaohongshu-mcp GitHub](https://github.com/xpzouying/xiaohongshu-mcp)
+- [xhs-ai-tool Chrome Extension GitHub](https://github.com/XiaoruiWang-SH/xhs-ai-tool)
+- [MCP Servers Are the New SaaS — DEV Community](https://dev.to/krisying/mcp-servers-are-the-new-saas-how-im-monetizing-ai-tool-integrations-in-2026-2e9e)
+- [MCP Server Monetization 2026 — DEV Community](https://dev.to/namel/mcp-server-monetization-2026-1p2j)
+- [Rise of MCP: Protocol Adoption 2026 — Medium](https://medium.com/mcp-server/the-rise-of-mcp-protocol-adoption-in-2026-and-emerging-monetization-models-cb03438e985c)
+- [MCPize — Deploy and Monetize MCP Servers](https://mcpize.com)
+- [Product Hunt Chrome Extensions 2026](https://www.producthunt.com/categories/chrome-extensions)
+- [AI Monetization Using Market Gaps — Profit PRO](https://www.profitproo.com/2026/03/ai-monetization-using-market-gaps.html)
+- [AEO Grader — HubSpot](https://www.hubspot.com/aeo-grader)
