@@ -190,6 +190,21 @@
 
 ---
 
+## QUICK WIN PRIORITY MATRIX
+
+| # | Opportunity | Est. Pay | Time to First Dollar | Fit Score |
+|---|-------------|----------|---------------------|-----------|
+| Upwork #2 | Python + Firebird + Claude Automation | $1,200 fixed | 3–5 days | ⭐⭐⭐⭐⭐ |
+| Upwork #6 | Blockchain + AI REST/MCP | $1,000 fixed | 1 week | ⭐⭐⭐⭐ |
+| Upwork #3 | MCP Server (Agent Governance) | $50–$100/hr, 1–3 months | 1 week | ⭐⭐⭐⭐⭐ |
+| Fiverr #16 | MCP Server Setup Gig | $150–$400 | 1–2 days (listing) | ⭐⭐⭐⭐⭐ |
+| Fiverr #15 | Custom RAG Chatbot | $100–$500 | 2–3 days (listing) | ⭐⭐⭐⭐ |
+| GitHub #10 | Claude + GitHub Actions Code Review | $100–$300/client | 2 days | ⭐⭐⭐⭐ |
+| Product Hunt #11 | Mngr setup consulting | $200–$500 | 1–2 weeks | ⭐⭐⭐⭐ |
+| Upwork #1 | n8n + Claude Agentic Workflow | $25 fixed | 1–2 days | ⭐⭐⭐ (reviews only) |
+
+---
+
 ## RECOMMENDED IMMEDIATE ACTIONS
 
 1. **Apply today:** Upwork job #2 (Python + Claude, $1,200) and #3 (MCP Server developer, hourly)
