@@ -1,299 +1,274 @@
-# Product Ideas Report — 2026-04-18 17:00
+# Product Ideas Report — 2026-04-18 17:xx
 
-> Solo developer profile: Python, TypeScript, Claude API, MCP servers, AI automation.
-> Focus: Ship in 1–3 days, revenue from day 1.
-
----
-
-## Research Summary
-
-- **MCP ecosystem**: 11,000+ servers, <5% monetized — massive white space
-- **Xiaohongshu (小红书)**: 400M MAU, 84.2% creators struggle with layout/content efficiency; viral tool demand is huge
-- **Chrome extensions**: Freemium + subscription or credit-pack model is proven; no Google cut on external billing
-- **Gumroad/Payhip best sellers**: AI prompt packs, automation templates, one-time purchases convert well
-- **Product Hunt trends**: AI agents, browser automation, voice assistants, niche workflow tools
-- **Market signal**: "Coordination problems" (organizing, extracting, routing) > "creation problems" (writing from scratch)
-- **WeChat**: AI agent mini-programs growing fast; ¥29–99/month subscriptions accepted by Chinese users
+> **Solo dev profile:** Python, TypeScript, Claude API, MCP servers, AI automation
+> **Goal:** Ship in 1–3 days, generate revenue immediately
 
 ---
 
-## Product Ideas (Ranked by Launch Speed)
+## Research Summary (April 2026)
+
+**Global trends:**
+- AI micro-SaaS market growing 30% YoY; average solo founder hitting $5K–$50K MRR
+- Vertical-specific tools outperform horizontal tools 3:1 — niches win
+- MCP ecosystem exploded from 1K → 10K+ servers; <5% monetized (massive white space)
+- Product Hunt April 2026 hot categories: AI agents, browser automation, niche workflow tools, voice assistants, contract redlining (Gerri launched this month)
+- Chrome extension freemium + external billing (Paddle) bypasses the 30% Google cut
+
+**Chinese market (小红书 / 知乎 signals):**
+- WeChat launched "AI Mini Program Growth Plan" for all of 2026 — free cloud compute, traffic incentives, monetization support for new AI 小程序
+- Tencent WeChat AI agent rolling out Q3 2026 (1.4B MAU primed for AI-assisted UX)
+- 小红书 creator explosion; 84%+ struggle with content efficiency; viral post tools sell at ¥500+/day documented on afengip.com
+- 闲鱼 virtual goods: resume services, content templates, prompt packs — low friction, instant ¥ revenue
+- AI freelancers on Chinese platforms earn 47% more than non-AI users
+
+**Key market gaps identified:**
+- Vertical AI writers (dental, HVAC, legal) — generic tools dominate, niche is open
+- Contract plain-English explainer — Gerri launched April 2026, validating legal AI demand
+- Meeting transcript → CRM write-back (existing tools transcribe but don't push to tools)
+- 小红书-native post generator with Claude-quality Chinese — no polished tool
+- MCP "skill packs" / Claude Code brain bundles — brand new paid category, documented in Stormy AI April 2026
+- Reddit pain-point scanner — documented as founder research method, no in-browser tool exists
 
 ---
 
-### 1. 🎯 XiaoHongShu Viral Post Generator
+## Ideas (Prioritized by Launch Speed)
 
-**What it does:** Paste a product/topic and get a ready-to-publish 小红书 "种草" note with emoji, hashtags, and platform-native tone — powered by Claude.
+---
 
-| Field | Details |
+### 1. RedditGapFinder — Chrome Extension for Market Research
+
+**What it does:** Scans any subreddit or product thread and surfaces "I wish there was a tool that..." / "why doesn't X exist" complaints, ranked by upvotes and recency.
+
+| Field | Value |
 |---|---|
-| **Target market** | Chinese (小红书 creators, brands, KOLs) |
-| **Est. dev time** | 8–12 hours |
-| **Monetization** | Freemium + subscription |
-| **Selling platform** | 微信小程序 + Payhip (for global) |
-| **Price point** | ¥39/month or ¥99 lifetime |
-| **Competition** | Medium (generic tools exist; no Claude-quality niche player) |
-| **Revenue potential** | $800–3,000/month |
+| **Target market** | Global (indie hackers, solopreneurs, PMs) |
+| **Est. dev time** | 8–16 hours |
+| **Monetization** | One-time $19 or freemium (10 scans free → $9/mo unlimited) |
+| **Selling platform** | Payhip · Chrome Web Store |
+| **Competition** | Low (no direct polished competitor found) |
+| **Revenue potential** | $200–$1,500/mo |
 
-**Why now:** 小红书爆款率is only 3.9%; creators need an edge. Claude writes in authentic Chinese voice better than GPT wrappers. Ship as a web app first, then wrap as a 小程序.
+**Why now:** Context Studios, Indie Hackers posts, and entrepreneurloop.com all document Reddit-as-research as the dominant 2026 founder methodology. Zero polished browser tools exist. TypeScript content script → background worker → Claude API. Distributes free via Chrome Web Store.
 
-**Stack:** FastAPI + Claude API + minimal frontend. Offer 5 free generations/day, then paywall.
-
----
-
-### 2. 🔌 Premium MCP Server Bundle (Gumroad)
-
-**What it does:** A one-time-purchase pack of 10–15 production-ready MCP servers (Notion sync, Gmail reader, Slack poster, GitHub issue creator, etc.) with docs and Claude Code CLAUDE.md templates.
-
-| Field | Details |
-|---|---|
-| **Target market** | Global (Claude power users, developers) |
-| **Est. dev time** | 16–24 hours |
-| **Monetization** | One-time purchase |
-| **Selling platform** | Gumroad / Payhip |
-| **Price point** | $39–79 one-time |
-| **Competition** | Low (most MCP servers are free but low quality; no curated paid pack exists) |
-| **Revenue potential** | $500–2,000/month |
-
-**Why now:** MCP adoption is at 8M downloads with 85% MoM growth. Only 5% of servers are monetized. Developers will pay for battle-tested, documented servers that just work.
-
-**Stack:** Pure TypeScript MCP servers. Sell ZIP on Gumroad. Zero hosting costs.
+**Claude API angle:** Claude classifies comments as pain points vs. feature requests vs. complaints. Claude Haiku = fast + cheap at this use case scale.
 
 ---
 
-### 3. 📧 Email-to-CRM Action Extractor
+### 2. 小红书爆款生成器 — WeChat Mini Program
 
-**What it does:** Paste an email thread or meeting transcript → Claude extracts structured CRM fields, follow-up tasks, and a draft reply — output as JSON or Notion/Airtable row.
+**What it does:** Enter a product name or topic → Claude generates a viral 小红书 "种草" post with emoji density, hashtag clusters, hook opening, and platform-native tone.
 
-| Field | Details |
+| Field | Value |
 |---|---|
-| **Target market** | Global (sales reps, consultants, freelancers) |
+| **Target market** | Chinese (小红书 creators, KOLs, brand accounts) |
+| **Est. dev time** | 20–32 hours |
+| **Monetization** | Freemium + ¥29.9/mo or ¥9.9 per 10 posts |
+| **Selling platform** | 微信小程序 (WeChat Pay) · 闲鱼 virtual goods |
+| **Competition** | Low–Medium (generic AI tools exist; no Claude-quality 小红书-native tool) |
+| **Revenue potential** | ¥3,000–¥15,000/mo (~$400–$2,000) |
+
+**Why now:** WeChat's 2026 AI Mini Program Growth Plan provides free cloud compute + traffic incentives = near-zero CAC. Documented ¥500+/day revenue from 小红书 virtual content products. 小红书爆款率 is only 3.9%; creators will pay to improve odds.
+
+**Claude API angle:** System prompt enforces 小红书 structure (emoji density, line breaks, 话题 tags). Prompt caching on the structural system prompt cuts costs ~90% on repeat calls.
+
+---
+
+### 3. ContractSimplify — AI Plain-English Contract Explainer
+
+**What it does:** Paste any contract, TOS, or NDA → Claude returns plain-English breakdown with risk flags, unusual clauses highlighted, and a "should you sign?" verdict.
+
+| Field | Value |
+|---|---|
+| **Target market** | Global (freelancers, small businesses) |
 | **Est. dev time** | 10–16 hours |
-| **Monetization** | Subscription |
-| **Selling platform** | Paddle / Lemon Squeezy |
-| **Price point** | $19/month |
-| **Competition** | Medium (Otter/Fireflies target meetings; no simple email-first tool) |
-| **Revenue potential** | $1,000–5,000/month at scale |
+| **Monetization** | $9.99 per contract (one-time) or $19/mo unlimited |
+| **Selling platform** | Paddle · Payhip |
+| **Competition** | Low–Medium |
+| **Revenue potential** | $500–$3,000/mo |
 
-**Why now:** Sales teams spend 30%+ of time on CRM data entry. Claude's extraction quality is excellent. Simple CRUD web app with Stripe — can be live in a weekend.
+**Why now:** Gerri (contract redlining) launched on Product Hunt April 2026 with traction — validates the legal AI niche. Freelancers and SMBs won't pay lawyer rates. Claude's 200K context handles full contracts in a single pass — no chunking needed.
 
-**Stack:** Next.js + Claude API + Supabase. Freemium: 20 extractions/month free.
+**Claude API angle:** One-shot full-document analysis → structured JSON (risk level per clause, plain-English rewrite, signing recommendation). Cheapest viable model = Claude Haiku for short contracts, Sonnet for long ones.
 
 ---
 
-### 4. 🗂️ CLAUDE.md Generator for Any Codebase
+### 4. Claude Code Skill Packs — Digital Product on Payhip
 
-**What it does:** Run a CLI command in any repo → Claude scans the codebase and auto-generates a production-quality CLAUDE.md with commands, architecture notes, and coding conventions.
+**What it does:** Pre-built Claude Code skill bundles (`.claude/commands/` + MCP configs) for specific workflows, e.g., "Startup Marketing Brain" (pulls GA4, writes copy, posts to social) or "DevOps Brain" (monitors deploys, writes incident reports).
 
-| Field | Details |
+| Field | Value |
 |---|---|
-| **Target market** | Global (developers using Claude Code) |
-| **Est. dev time** | 6–10 hours |
-| **Monetization** | One-time purchase (CLI tool) |
-| **Selling platform** | Gumroad / Payhip / npm (freemium) |
-| **Price point** | $19 one-time or $5/month API credits |
-| **Competition** | Low (Claude Code's /init is basic; no paid polished tool exists) |
-| **Revenue potential** | $300–1,200/month |
+| **Target market** | Global (Claude Code users, dev teams, agencies) |
+| **Est. dev time** | 8–16 hours per pack |
+| **Monetization** | One-time $29–$79 per pack |
+| **Selling platform** | Payhip · MCP Market registry |
+| **Competition** | Very Low (brand new category as of April 2026) |
+| **Revenue potential** | $200–$1,000/mo passive |
 
-**Why now:** Claude Code is mainstream; every dev team needs a CLAUDE.md. This is a 1-day build with a direct, paying audience. Can upsell team licenses.
+**Why now:** Stormy AI April 2026 documented the "2026 Skill Economy" for Claude Code — agency owners already paying for pre-built MCP skill folders. Payhip: zero fees on first $1K revenue. You use Claude Code daily — you know what people need.
 
-**Stack:** Python CLI + Claude API. Distribute via pip or GitHub + Gumroad unlock.
+**Zero API cost to you:** Buyers run packs against their own Claude API keys. Pure digital product margin.
 
 ---
 
-### 5. 🏪 闲鱼/淘宝 Listing Optimizer
+### 5. MeetingMemo MCP — Transcript → CRM Auto-Fill
 
-**What it does:** Upload product photo + brief description → Claude generates a viral 闲鱼 or 淘宝 title, bullet-point description, and suggested price range based on similar items.
+**What it does:** MCP server that takes raw meeting transcript text, extracts action items, summaries, and decisions, then writes them into the user's tools (HubSpot / Notion / Linear) via tool calls.
 
-| Field | Details |
+| Field | Value |
 |---|---|
-| **Target market** | Chinese (C2C sellers, 二手 traders, small shop owners) |
-| **Est. dev time** | 10–14 hours |
-| **Monetization** | Pay-per-use credits |
-| **Selling platform** | 微信小程序 / 支付宝小程序 |
-| **Price point** | ¥1 per listing (credit pack: ¥30 = 50 listings) |
-| **Competition** | Low (no dedicated AI listing writer for 闲鱼 exists) |
-| **Revenue potential** | $400–1,500/month |
+| **Target market** | Global (B2B consultants, sales teams) |
+| **Est. dev time** | 12–20 hours |
+| **Monetization** | $0.05/meeting (usage-based) or $19/mo flat |
+| **Selling platform** | Paddle · MCP Market registry |
+| **Competition** | Medium (Otter/Fireflies transcribe but don't write back to tools natively) |
+| **Revenue potential** | $300–$2,000/mo |
 
-**Why now:** 闲鱼 has 500M+ registered users. Sellers constantly complain listings don't convert. Claude writes compelling Chinese copy. Pay-per-use = low friction entry.
+**Why now:** AI meeting assistant market = $7.33B by 2035. MCP Market registry lets you charge per invocation. The gap: existing tools stop at transcription; the actual pain is CRM data entry afterward.
 
-**Stack:** WeChat Mini Program + Python backend + Claude API + Claude vision for image understanding.
+**Claude API angle:** Claude extracts structured JSON → MCP tool calls route to CRM. TypeScript MCP server, ~300 lines.
 
 ---
 
-### 6. 📰 Competitor Intelligence Digest
+### 6. NicheScribe — AI Blog Writer for Vertical Industries
 
-**What it does:** Enter 3–5 competitor URLs → every Monday, Claude scrapes and summarizes new blog posts, pricing changes, feature launches, and job postings into a 1-page digest emailed to you.
+**What it does:** Generates SEO-optimized blog posts in industry-specific tone (dental, real estate, HVAC, legal, SaaS) — no generic filler, no hallucinated facts, 1,500+ words.
 
-| Field | Details |
+| Field | Value |
+|---|---|
+| **Target market** | Global (US/AU SMBs, agencies) |
+| **Est. dev time** | 16–24 hours |
+| **Monetization** | Subscription — $29/mo (5 posts) · $79/mo (20 posts) |
+| **Selling platform** | Paddle |
+| **Competition** | Medium (generic AI writers saturated; vertical-specific open) |
+| **Revenue potential** | $500–$3,000/mo at 6 months |
+
+**Why now:** 73% of successful solo SaaS targets micro-segments (Indie Hackers research, Nov 2025). Realtors, dentists, and HVAC shops pay $50–100/hr for human writers. Claude with a cached industry-persona system prompt delivers consistent results at ~90% cost reduction.
+
+---
+
+### 7. ResumeRadar — AI Resume Optimizer for Chinese Job Market
+
+**What it does:** Paste a job description + resume → Claude rewrites bullets to match ATS keywords and Chinese hiring conventions (STAR format, 校招/社招 style, 简历 length norms).
+
+| Field | Value |
+|---|---|
+| **Target market** | Chinese (应届生, 社招求职者) |
+| **Est. dev time** | 12–20 hours |
+| **Monetization** | ¥9.9 per resume or ¥29.9/mo unlimited |
+| **Selling platform** | 闲鱼 · 微信小程序 |
+| **Competition** | Low (existing tools are English-only or generic) |
+| **Revenue potential** | ¥5,000–¥20,000/mo (~$700–$2,700) |
+
+**Why now:** 2026 Chinese graduate cohort is the largest ever (1,222万+ graduates). 闲鱼 resume services are a documented working revenue channel. Claude handles Chinese text natively with high quality — no fine-tuning needed.
+
+---
+
+### 8. CompetitorDigest — Weekly AI Intelligence Email
+
+**What it does:** Enter 3–5 competitor URLs → every Monday, Claude scrapes new blog posts, pricing changes, feature launches, and job postings into a 1-page digest delivered by email.
+
+| Field | Value |
 |---|---|
 | **Target market** | Global (founders, PMs, marketers) |
 | **Est. dev time** | 12–20 hours |
-| **Monetization** | Subscription |
-| **Selling platform** | Paddle / Lemon Squeezy |
-| **Price point** | $29/month |
-| **Competition** | Medium (Crayon/Klue are expensive enterprise tools; no $29 solo version) |
-| **Revenue potential** | $1,500–6,000/month |
+| **Monetization** | Subscription $29/mo |
+| **Selling platform** | Lemon Squeezy · Paddle |
+| **Competition** | Medium (Crayon/Klue are $500+/mo enterprise tools; no $29 solo option) |
+| **Revenue potential** | $1,500–$6,000/mo |
 
-**Why now:** Every founder wants to track competitors but won't pay $500/month for Crayon. $29 is an easy yes. Claude handles the synthesis beautifully.
-
-**Stack:** Python + Playwright scraper + Claude API + Resend for email. Cron job weekly.
+**Why now:** Price gap between "free Google Alerts" and "enterprise Crayon" is huge. $29 is an impulse buy for any founder. Python + Playwright + Claude + Resend. Runs as a weekly cron job.
 
 ---
 
-### 7. 🎙️ YouTube/Podcast → Chinese Summary Tool
+### 9. YT→CN — English Video to Chinese Summary Tool
 
-**What it does:** Paste a YouTube URL or upload audio → get a Claude-written Chinese summary with key takeaways, quotes, and an optional 小红书-ready post — bridging English content to Chinese audiences.
+**What it does:** Paste a YouTube URL or upload audio → Claude produces a Chinese summary with key takeaways, quotes, and an optional 小红书-ready post — bridging English content to Chinese audiences.
 
-| Field | Details |
+| Field | Value |
 |---|---|
-| **Target market** | Both (Chinese learners of English content; bilingual creators) |
+| **Target market** | Both (Chinese English-content consumers + bilingual creators) |
 | **Est. dev time** | 12–16 hours |
-| **Monetization** | Freemium + subscription |
-| **Selling platform** | Payhip + 微信小程序 |
-| **Price point** | $9/month global; ¥29/month China |
-| **Competition** | Low (general summarizers exist; no EN→CN niche tool exists) |
-| **Revenue potential** | $600–2,500/month |
+| **Monetization** | Freemium: 3 free/day · $9/mo global · ¥29/mo China |
+| **Selling platform** | Payhip (global) · 微信小程序 (China) |
+| **Competition** | Low (general summarizers exist; EN→CN niche tool does not) |
+| **Revenue potential** | $600–$2,500/mo |
 
-**Why now:** Chinese creators want to repurpose English content but language barrier is high. Claude's bilingual translation + summarization is best-in-class. Whisper handles transcription, Claude handles the rest.
-
-**Stack:** Python + yt-dlp + Whisper + Claude API + simple React frontend.
+**Why now:** Chinese creators want to repurpose English content; language barrier is the blocker. Stack: yt-dlp + Whisper + Claude. Claude's bilingual quality is best-in-class.
 
 ---
 
-### 8. 📝 AI Prompt Pack for Claude (Passive Income)
+### 10. AIVoiceReply — Voice Message Smart Reply (WhatsApp / WeChat)
 
-**What it does:** 150+ battle-tested Claude prompts across 10 categories: coding, content, business analysis, data extraction, email writing, legal simplification, SEO, sales copy, customer support scripts, and startup ideation.
+**What it does:** Mobile web app — transcribes a voice note and drafts a contextually appropriate reply using Claude; targeted at professionals drowning in voice messages.
 
-| Field | Details |
+| Field | Value |
 |---|---|
-| **Target market** | Global |
-| **Est. dev time** | 8–12 hours (writing + formatting) |
-| **Monetization** | One-time purchase |
-| **Selling platform** | Gumroad / Payhip |
-| **Price point** | $19–29 one-time |
-| **Competition** | High (many prompt packs) — differentiate on Claude-specific quality |
-| **Revenue potential** | $200–800/month passive |
-
-**Why now:** AI prompt packs are top Gumroad sellers. A Claude-specific pack (not generic GPT prompts) is differentiated. Zero hosting cost, purely passive income. Bundle with CLAUDE.md Generator for $39 combo.
-
----
-
-### 9. 🔎 Chrome Extension: AI Page Summarizer + Action Extractor
-
-**What it does:** Highlight any webpage text → get a 3-bullet summary + extracted to-dos, dates, and action items in a sidebar — powered by Claude Haiku for speed.
-
-| Field | Details |
-|---|---|
-| **Target market** | Global (knowledge workers, researchers, students) |
-| **Est. dev time** | 10–16 hours |
-| **Monetization** | Freemium (10 uses/day free) + $7/month unlimited |
-| **Selling platform** | Chrome Web Store + Paddle (external billing) |
-| **Price point** | $7/month |
-| **Competition** | High (many summarizers) — differentiate on action extraction + Claude quality |
-| **Revenue potential** | $500–2,000/month |
-
-**Why now:** Action extraction (not just summarization) is the gap. Claude Haiku is fast and cheap enough to make this profitable at $7/month. Chrome Web Store provides free distribution to millions.
-
-**Stack:** Manifest V3 Chrome extension + Claude API (Haiku). BYOK option for power users.
-
----
-
-### 10. 🤖 MCP Server: WeChat/微信 Content Automation
-
-**What it does:** An MCP server that connects Claude to the WeChat Official Account API — letting users draft, schedule, and publish WeChat articles directly from Claude conversations.
-
-| Field | Details |
-|---|---|
-| **Target market** | Chinese (公众号 operators, brand managers) |
+| **Target market** | Both (WeChat users in China + WhatsApp users globally) |
 | **Est. dev time** | 16–24 hours |
-| **Monetization** | Subscription |
-| **Selling platform** | 闲鱼 / 微信小程序 / Payhip |
-| **Price point** | ¥49/month |
-| **Competition** | Low (no Claude MCP server for WeChat exists) |
-| **Revenue potential** | $600–2,000/month |
+| **Monetization** | Freemium · ¥19.9/mo (China) · $9.99/mo (global) |
+| **Selling platform** | 微信小程序 (China) · Paddle (global) |
+| **Competition** | Low (voice → smart reply is unserved) |
+| **Revenue potential** | $300–$2,000/mo |
 
-**Why now:** WeChat now supports AI agent integrations via OpenClaw. Companies running 公众号 accounts would pay to automate Claude-quality content. MCP is the perfect delivery mechanism.
-
-**Stack:** TypeScript MCP server + WeChat Official Account API. Sell access key via 微信小程序.
+**Why now:** WeChat AI agent rollout in Q3 2026 is priming 1.4B users to expect AI-assisted messaging. Whisper API + Claude = full pipeline in ~200 lines of Python.
 
 ---
 
-### 11. 📊 AI KPI Dashboard Narrator
+## Priority Matrix
 
-**What it does:** Connect Google Sheets or paste CSV → Claude writes a human-readable weekly business narrative ("Revenue was up 12% driven by...") formatted as a Slack message or email.
-
-| Field | Details |
-|---|---|
-| **Target market** | Global (SMB founders, ops managers) |
-| **Est. dev time** | 12–18 hours |
-| **Monetization** | Subscription |
-| **Selling platform** | Lemon Squeezy |
-| **Price point** | $29/month |
-| **Competition** | Low (no simple $29 tool; enterprise BI tools are $500+/month) |
-| **Revenue potential** | $1,000–4,000/month |
-
-**Why now:** Every small business tracks numbers in Sheets but nobody turns them into narrative. Claude is perfect for this. Integrate with Google Sheets API + Slack webhooks in one weekend.
-
-**Stack:** Python + Google Sheets API + Claude API + Slack/email delivery.
+| Rank | Idea | Dev Hours | Revenue Speed | Market |
+|------|------|-----------|---------------|--------|
+| 1 | RedditGapFinder Chrome Ext | 8–16h | Fast (one-time sales from day 1) | Global |
+| 2 | Claude Code Skill Packs | 8–16h | Fast (Payhip, passive) | Global |
+| 3 | 小红书爆款生成器 | 20–32h | Fast (¥ via WeChat Pay) | Chinese |
+| 4 | ContractSimplify | 10–16h | Fast (per-use, no subscription needed) | Global |
+| 5 | ResumeRadar | 12–20h | Fast (闲鱼 virtual goods) | Chinese |
+| 6 | MeetingMemo MCP | 12–20h | Medium (usage-based MRR) | Global |
+| 7 | NicheScribe | 16–24h | Medium (subscription ramp) | Global |
+| 8 | YT→CN Summary | 12–16h | Medium | Both |
+| 9 | CompetitorDigest | 12–20h | Medium (subscription ramp) | Global |
+| 10 | AIVoiceReply | 16–24h | Medium | Both |
 
 ---
 
-### 12. 💬 AI Customer Support Script Generator
+## Recommended Starting Combo (this weekend)
 
-**What it does:** Enter your product + common complaints → Claude generates a full customer support playbook: FAQ answers, de-escalation scripts, refund policy language, and live chat response templates.
+**Day 1–2:** Build **RedditGapFinder** Chrome extension — TypeScript, Claude Haiku, Payhip + Chrome Web Store. Lowest risk, immediate sales channel, no server costs.
 
-| Field | Details |
-|---|---|
-| **Target market** | Both (SMB owners, Shopify store owners, Chinese sellers on 淘宝/拼多多) |
-| **Est. dev time** | 8–12 hours |
-| **Monetization** | One-time purchase |
-| **Selling platform** | Gumroad + Payhip + 闲鱼 |
-| **Price point** | $29 global / ¥59 China (one-time) |
-| **Competition** | Low (generic scripts exist; AI-personalized versions are new) |
-| **Revenue potential** | $400–1,200/month |
+**Day 2–3 (parallel):** Package **Claude Code Skill Packs** — you already have the skills, just document and sell. Zero infrastructure, 100% margin.
 
-**Why now:** E-commerce sellers on both sides of the Pacific have the same problem: too many repetitive support tickets. A one-time purchase with instant value removes the subscription objection.
+**Week 2:** Build **小红书爆款生成器** as a WeChat Mini Program to tap the Chinese market with WeChat's free 2026 growth incentives.
 
 ---
 
-## Quick-Win Priority Matrix
-
-| Rank | Idea | Dev Hours | Revenue/Month | Why Fast? |
-|---|---|---|---|---|
-| 🥇 | CLAUDE.md Generator | 6–10h | $300–1,200 | 1-day build, target audience is you |
-| 🥈 | AI Prompt Pack (Claude) | 8–12h | $200–800 | No infrastructure, pure content |
-| 🥉 | MCP Server Bundle | 16–24h | $500–2,000 | You know this stack cold |
-| 4 | XiaoHongShu Generator | 8–12h | $800–3,000 | Huge underserved Chinese market |
-| 5 | Email→CRM Extractor | 10–16h | $1,000–5,000 | Clear pain, proven willingness to pay |
-| 6 | Competitor Digest | 12–20h | $1,500–6,000 | High value, recurring revenue |
-
----
-
-## Platform Notes
+## Platform Selection Guide
 
 | Platform | Best For | Fee |
 |---|---|---|
-| **Gumroad** | One-time downloads, prompt packs | 10% flat |
-| **Payhip** | One-time + subscriptions (lower fees) | 5% or $29/mo for 2% |
-| **Lemon Squeezy** | SaaS subscriptions, global tax handling | 5% + $0.50 |
-| **Paddle** | SaaS, handles VAT/GST automatically | ~5% |
-| **微信小程序** | Chinese mobile users, WeChat Pay | 0.6% WeChat Pay fee |
-| **闲鱼** | Chinese C2C, digital goods | Free listing |
+| **Payhip** | One-time digital products, subscriptions | 5% (or $29/mo for 2%) |
+| **Lemon Squeezy** | SaaS subscriptions, global tax handling | 5% + $0.50/txn |
+| **Paddle** | SaaS + VAT/GST auto-handling | ~5% |
+| **Gumroad** | Content products, prompt packs | 10% flat |
+| **微信小程序** | Chinese mobile users, WeChat Pay | 0.6% WeChat Pay |
+| **闲鱼** | Chinese C2C, digital goods, zero upfront | Free listing |
 
 ---
 
 ## Sources
 
-- [50 Micro SaaS Ideas for 2026 (NxCode)](https://www.nxcode.io/resources/news/micro-saas-ideas-2026)
-- [11 Profitable AI Micro SaaS Ideas (79mplus)](https://www.79mplus.com/11-profitable-ai-micro-saas-ideas-you-can-start-in-7-days-2026-edition/)
-- [MCP Servers Are the New SaaS (DEV Community)](https://dev.to/krisying/mcp-servers-are-the-new-saas-how-im-monetizing-ai-tool-integrations-in-2026-2e9e)
-- [Rise of MCP: Monetization Models 2026 (Medium)](https://medium.com/mcp-server/the-rise-of-mcp-protocol-adoption-in-2026-and-emerging-monetization-models-cb03438e985c)
-- [Best Products of April 2026 (Product Hunt)](https://www.producthunt.com/products)
-- [How to Monetize a Chrome Extension 2026 (Dodo Payments)](https://dodopayments.com/blogs/monetize-chrome-extension)
-- [Best Selling Products on Gumroad 2026 (Accio)](https://www.accio.com/business/best-selling-products-on-gumroad-2025)
-- [Gumroad vs Payhip 2026 (Medium)](https://proacademia.medium.com/gumroad-vs-payhip-2026-best-platform-for-beginners-selling-digital-products-d28be87fe279)
-- [WeChat AI Agent Integration 2026 (CNBC)](https://www.cnbc.com/2026/01/21/china-tech-ai-agentic-commerce-super-apps-alibaba-taobao-qwen-tencent-wechat-doubbao-weixin.html)
-- [小红书AI创作工具2026 (知乎)](https://zhuanlan.zhihu.com/p/1994414973997318314)
-- [He Cracked Reddit's Algorithm — $61K/Month AI Tool (Medium)](https://ripelemons.medium.com/he-cracked-reddits-algorithm-and-built-a-61k-month-ai-tool-from-it-7041bbaa5bf6)
-- [AI Micro-SaaS Case Studies 2026 (EgoistAI)](https://egoistai.com/articles/ai-saas-microstartup-case-studies/)
+- [50 Micro SaaS Ideas for 2026 — NxCode](https://www.nxcode.io/resources/news/micro-saas-ideas-2026)
+- [AI Micro-SaaS Case Studies 2026 — EgoistAI](https://egoistai.com/articles/ai-saas-microstartup-case-studies/)
+- [Best AI Micro-SaaS Ideas 2026 — Medium/Pallavi Pant](https://medium.com/@pantpallavi13/best-ai-micro-saas-ideas-for-2026-that-arent-just-chatgpt-wrappers-2aa3b8b4f67e)
+- [15 Bootstrapped SaaS Niches for Solo Founders — entrepreneurloop.com](https://entrepreneurloop.com/bootstrapped-saas-niches-solo-founders/)
+- [How to Monetize MCP Servers — DEV Community](https://dev.to/namel/mcp-server-monetization-2026-1p2j)
+- [MCP Skills Economy April 2026 — Stormy AI](https://stormy.ai/blog/2026-skill-economy-claude-mcp-marketing-skills)
+- [Best Products of April 2026 — Product Hunt](https://www.producthunt.com/products)
+- [AI Agents on Product Hunt 2026](https://www.producthunt.com/categories/ai-agents)
+- [WeChat AI Mini Program Growth Plan 2026 — aibase.com](https://news.aibase.com/news/24250)
+- [Tencent WeChat AI Agent — NAI500](https://nai500.com/blog/2026/03/tencent-secretly-develops-wechat-ai-agent-targeting-mini-program-ecosystem-with-1-4-billion-monthly-active-users/)
+- [小红书AI爆款赚钱指南2026 — Reditor](https://help.reditorapp.com/content/260218小红书ai爆款赚钱笔记.html)
+- [AI副业变现2026 — 知乎](https://zhuanlan.zhihu.com/p/2011912458730763288)
+- [小红书独立开发者模式 — Geek Park](https://www.geekpark.net/news/362541)
+- [I shipped a SaaS in 30 days as solo dev — Indie Hackers](https://www.indiehackers.com/post/i-shipped-a-productivity-saas-in-30-days-as-a-solo-dev-heres-what-ai-actually-changed-and-what-it-didn-t-15c8876106)
+- [How to Find App Ideas on Reddit 2026 — Context Studios](https://www.contextstudios.ai/blog/how-to-find-app-ideas-on-reddit-the-ultimate-guide-for-founders-2026)
